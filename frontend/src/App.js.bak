@@ -1,0 +1,34 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Upload from './pages/Upload';
+import Process from './pages/Process';   // নতুন
+// import Manual from './pages/Manual';  // রিমুভ
+// import NaturalLanguage from './pages/NaturalLanguage'; // রিমুভ
+import Result from './pages/Result';     // রেখে দিতে পারেন কিন্তু রাউট না দিয়ে
+import About from './pages/About';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
+
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <main className="py-4">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/upload" element={<Upload />} />
+          <Route path="/process" element={<Process />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />
+    </Router>
+  );
+}
+
+export default App;

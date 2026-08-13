@@ -1,0 +1,17 @@
+﻿import os
+from dotenv import load_dotenv
+load_dotenv()
+
+class Config:
+    SECRET_KEY = os.getenv('SECRET_KEY', 'dev-secret-key')
+    UPLOAD_FOLDER = os.path.join(os.getcwd(), 'uploads')
+    OUTPUT_FOLDER = os.path.join(os.getcwd(), 'outputs')
+    MAX_CONTENT_LENGTH = 16 * 1024 * 1024
+    ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'bmp', 'tiff'}
+
+    os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+    os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+    os.makedirs(os.path.join(os.getcwd(), 'logs'), exist_ok=True)
+    os.makedirs(os.path.join(os.getcwd(), 'models'), exist_ok=True)
+
+    MODELS_FOLDER = os.path.join(os.getcwd(), 'models')

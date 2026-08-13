@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.db
+*.sqlite3
+
+# Flask
+instance/
+.webassets-cache
+*.log
+logs/
+
+# Uploads & Outputs (ইমেজ ফাইল গিটে আপলোড হবে না)
+backend/uploads/
+backend/outputs/
+backend/models/*.pt
+backend/models/*.pth
+!backend/models/.gitkeep
+
+# Node / React
+frontend/node_modules/
+frontend/build/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/coverage/
+
+# Environment variables
+*.env
+backend/.env
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# History database
+history.db
